@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+        api1:
+                build: ./api1
+
+        api2:
+                build: ./api2
+
+        main-site:
+                build: ./main-site
+                ports:
+                        - 8000:80
+                links:
+                        - api1
+                        - api2
+

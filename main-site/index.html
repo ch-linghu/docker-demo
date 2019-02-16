@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>Docker Demo</head>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<body>
+<p>This is main site</p>
+
+<p>the following message is from api1:</p>
+<p>
+<div id="message1"></div>
+</p>
+<p>the following message is from api2:</p>
+<p>
+<div id="message2"></div>
+</p>
+<script>
+	$(document).ready(function(){
+		$.ajax({
+			url: "api1/"
+		}).then(function(data){
+			$('#message1').append(data);
+		});
+
+		$.ajax({
+			url: "api2/"
+		}).then(function(data){
+			$('#message2').append(data);
+		});
+	});
+</script>
+</body>
+</html>
+
